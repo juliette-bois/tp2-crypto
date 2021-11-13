@@ -1,13 +1,44 @@
 from PIL import Image
 
+
+# Question 1 : récupérer le message caché dans l'image
+
 def read_from_pixel(pixels, x, y):
+    """
+    :param pixels: image pixels array
+    :type pixels: :ref:`PixelAccess` or :py:class:`PIL.PyAccess`
+    :param x: pixel X position
+    :type x: int
+    :param y: pixel Y position
+    :type y: int
+    :return: the character hidden in the pixel
+    :rtype: str
+    """
     return chr(read_bytes_from_pixel(pixels, x, y))
 
+
 def read_bytes_from_pixel(pixels, x, y):
+    """
+    :param pixels: image pixels array
+    :type pixels: :ref:`PixelAccess` or :py:class:`PIL.PyAccess`
+    :param x: pixel X position
+    :type x: int
+    :param y: pixel Y position
+    :type y: int
+    :return: ASCII value of the character
+    :rtype: int
+    """
     r, g, b = pixels[x, y]
     return (0b00001111 & r) | ((0b00001111 & g) << 4)
 
-def read_hidden(img):
+
+def read_hidden_text(img):
+    """
+    :param img:
+    :type img: any
+    :return: the hidden message
+    :rtype: str
+    """
     pixels = img.load()  # tableau des pixels
     y = 0
     i = 0
@@ -28,10 +59,18 @@ def read_hidden(img):
         y += 1
     return text
 
+
 def main(filename):
+    """
+    :param filename: file path to image
+    :type filename: str
+    :return: void
+    :rtype:
+    """
     img = Image.open(filename)  # ouverture de l'image contenue dans un fichier
-    text = read_hidden(img)
+    text = read_hidden_text(img)
     print(text)
+
 
 if __name__ == "__main__":
     import sys
