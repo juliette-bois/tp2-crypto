@@ -75,8 +75,8 @@ def read_bytes_from_pixel(pixels, x, y):
     :return: ASCII value of the character
     :rtype: int
     """
-    r, g, b, a = pixels[x, y]
-    return (0b00001111 & r) | ((0b00001111 & g) << 4)
+    rgba = pixels[x, y]
+    return (0b00001111 & rgba[0]) | ((0b00001111 & rgba[1]) << 4)
 
 
 def read_hidden_text(img):

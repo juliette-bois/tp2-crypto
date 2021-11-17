@@ -13,7 +13,7 @@ Ce diplôme sera constitué d'une image avec les caractéristiques suivantes :
 Nous avons utilisé le langage Python car ce TP ne demande pas une grosse puissance de calcul.
 De plus, Python propose plusieurs librairies pour simplifier le traitement de l'image.
 
-**Comment installer le projet ?**    
+**Comment installer le projet ?**
 A la racine du projet, vous pouvez lancer les commandes suivantes dans votre terminal afin d'installer les dépendances nécessaires.
 ```
 # Pillow : https://pillow.readthedocs.io/en/stable/installation.html#basic-installation

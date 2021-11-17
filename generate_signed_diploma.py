@@ -86,10 +86,10 @@ def store_bytes_in_pixel(pixels, x, y, bytes):
     :return: void
     :rtype:
     """
-    r, g, b, a = pixels[x, y]
-    r = (r & 0b11110000) | (bytes & 0b00001111)
-    g = (g & 0b11110000) | (bytes >> 4)
-    pixels[x, y] = r, g, b
+    rgba = list(pixels[x, y])
+    rgba[0] = (rgba[0] & 0b11110000) | (bytes & 0b00001111)
+    rgba[1] = (rgba[1] & 0b11110000) | (bytes >> 4)
+    pixels[x, y] = tuple(rgba)
 
 
 def store_in_pixel(pixels, x, y, char):
