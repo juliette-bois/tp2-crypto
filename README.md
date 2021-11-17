@@ -16,17 +16,17 @@ De plus, Python propose plusieurs librairies pour simplifier le traitement de l'
 **Comment installer le projet ?**    
 A la racine du projet, vous pouvez lancer les commandes suivantes dans votre terminal afin d'installer les dépendances nécessaires.
 ```
-# Pillow
+# Pillow : https://pillow.readthedocs.io/en/stable/installation.html#basic-installation
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade Pillow
 
-# PyOpenSSL
+# PyOpenSSL : https://pypi.org/project/pyOpenSSL/
 pip install pyOpenSSL
 
-# QRCode
+# QRCode : https://pypi.org/project/qrcode/
 pip install qrcode
 
-# CV2
+# CV2 : https://pypi.org/project/opencv-python/
 pip install opencv-python
 ```
 
@@ -39,7 +39,7 @@ Tandis que les questions 4 et 5 réutilisent ces POC afin de proposer un prototy
 ### Question 1
 L'objectif est de cacher un message dans une image et de le récupérer.
 Pour simplifier les choses et pour permettre de stocker un grand nombre de caractères dans l'image, on stocke un caractère par pixel.   
-4 bits dans rouge et 4 bits dans vert.   
+4 bits dans rouge et 4 bits dans vert.
 Afin d'éviter d'utiliser un paramètre `nb_bytes`, on stocke la taille du texte dans les 4 premiers pixels de l'image car on en a besoin pour récupérer les données à la lecture.
 
 Pour tester cette première partie, vous pouvez lancer cette commande dans votre console :
@@ -99,7 +99,7 @@ Pour cela, nous avons repris le code des 3 questions précédentes.
 
 Pour tester cette partie, vous pouvez lancer cette commande dans votre terminal :
 ```
- python3 generate_signed_diploma.py "Pierre Hyvernat" 17,3 testQ4.png
+python3 generate_signed_diploma.py "Pierre Hyvernat" 17,3 testQ4.png
 ```
 
 -------------

@@ -15,6 +15,7 @@ password = "coucou"
 
 DIPLOMA_PASS_PHRASE = '@@#123456#DIPLOMA_EXERCISE_PASSPHRASE#654321#@@'
 
+
 def image_to_byte_array(image):
     """
     :param image:
